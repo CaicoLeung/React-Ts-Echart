@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import Echart from './views/echart';
+import PieChart from './views/PieChart'; 
 
 interface IState {
   option: any
@@ -18,6 +19,7 @@ class App extends React.Component<{}, IState> {
     return (
       <div className="App">
         <Echart option={this.state.option} renderer="canvas" />
+        <PieChart />
       </div>
     );
   }
