@@ -11,7 +11,10 @@ const pieOptions: echarts.EChartOption<echarts.EChartOption.SeriesPie> = {
       ],
       type: 'pie'
     }
-  ]
+  ],
+  title: {
+    text: '饼状图'
+  }
 };
 const pieBootStyle: React.CSSProperties = {
   height: '400px',
