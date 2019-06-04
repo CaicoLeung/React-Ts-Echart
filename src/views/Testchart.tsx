@@ -1,4 +1,6 @@
-import * as echarts from 'echarts';
+import 'echarts/lib/chart/bar';
+import 'echarts/lib/component/title';
+import * as echarts from 'echarts/lib/echarts';
 import * as React from 'react';
 
 interface IState {

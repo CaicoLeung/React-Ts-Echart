@@ -1,4 +1,6 @@
-import * as echarts from 'echarts';
+import 'echarts/lib/chart/pie';
+import 'echarts/lib/component/title';
+import * as echarts from 'echarts/lib/echarts';
 import * as React from 'react';
 
 const pieOptions: echarts.EChartOption<echarts.EChartOption.SeriesPie> = {
