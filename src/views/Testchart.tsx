@@ -19,12 +19,15 @@ const echartRootStyle = {
 }
 
 export default class Test extends React.Component<IProps, IState> {
+  private myChart: echarts.ECharts | null;
+  private timer: number;
   constructor(props: any) {
     super(props);
     this.state = {
       height: '100%',
       width: '100%'
     };
+    this.myChart = null;
   }
 
   public render() {
@@ -34,8 +37,13 @@ export default class Test extends React.Component<IProps, IState> {
   }
 
   public componentDidMount() {
-    const rootElement: HTMLDivElement | HTMLCanvasElement = document.getElementById('echartRoot') as HTMLDivElement;
-    const myChart = echarts.init(rootElement);
-    myChart.setOption(this.props.option);
+    const rootElement = document.getElementById('echartRoot') as HTMLDivElement;
+    this.myChart = echarts.init(rootElement);
+    this.myChart.showLoading();
+    this.timer = window.setTimeout(() => {
+      this.myChart!.setOption(this.props.option);
+      this.myChart!.hideLoading();
+      window.clearTimeout(this.timer);
+    }, 3000);
   }
 }

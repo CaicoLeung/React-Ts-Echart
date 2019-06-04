@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './App.css';
+import BarDatasetChart from './views/BarDatasetChart';
 import LineChart from './views/LineChart';
 import NightingaleChart from './views/NightingaleChart';
 import PieChart from './views/PieChart'; 
@@ -23,6 +24,7 @@ class App extends React.Component<{}, IState> {
         <Testchart option={this.state.option} renderer="canvas" />
         <PieChart />
         <LineChart />
+        <BarDatasetChart />
         <NightingaleChart />
       </div>
     );
