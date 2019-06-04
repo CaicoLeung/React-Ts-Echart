@@ -1,10 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import Hello from './components/Hello';
-import Square from './components/Square';
 import Echart from './views/echart';
-
-import logo from './logo.svg';
 
 interface IState {
   option: any
@@ -21,15 +17,6 @@ class App extends React.Component<{}, IState> {
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Hello World!</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Hello name="Caico">I Love U</Hello>
-        <Square value="点击我" />
         <Echart option={this.state.option} renderer="canvas" />
       </div>
     );
